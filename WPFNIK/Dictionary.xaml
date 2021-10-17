@@ -1,0 +1,29 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:WPFNIK">
+    <Style TargetType="Label">
+        <Setter Property="Background" Value="AntiqueWhite"/>
+        <Setter Property="FontFamily" Value="TimesNewRoman"/>
+        <Setter Property="FontSize" Value="12pt"/>
+    </Style>
+    <Style TargetType="Button">
+        <Setter Property="Background" Value="#e0a9af"/>
+        <Setter Property="FontFamily" Value="TimesNewRoman"/>
+        <Setter Property="FontSize" Value="12pt"/>
+    </Style>
+    <Style TargetType="Frame">
+        <Setter Property="Background" Value="#b5d5ca"/>
+        <Setter Property="FontFamily" Value="TimesNewRoman"/>
+        <Setter Property="FontSize" Value="12pt"/>
+        <Setter Property="BorderBrush" Value="Black"/>
+        <Setter Property="BorderThickness" Value="0"/>
+    </Style>
+    <Style TargetType="ComboBox">
+        <Setter Property="FontFamily" Value="TimesNewRoman"/>
+        <Setter Property="FontSize" Value="12pt"/>
+    </Style>
+    <Style TargetType="TextBox">
+        <Setter Property="FontFamily" Value="TimesNewRoman"/>
+        <Setter Property="FontSize" Value="12pt"/>
+    </Style>
+</ResourceDictionary>
