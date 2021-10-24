@@ -16,18 +16,15 @@ using System.Windows.Shapes;
 namespace WPFNIK.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для Admin.xaml
+    /// Логика взаимодействия для UserPage.xaml
     /// </summary>
-    public partial class Admin : Page
+    public partial class UserPage : Page
     {
-        public Admin()
+        public UserPage()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new UserPage());
+            var currentUsers = PCpartsEntities.GetContext().USER.ToList();
+            ListUser.ItemsSource = currentUsers;
         }
     }
 }

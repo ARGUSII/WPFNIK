@@ -8,13 +8,11 @@
         Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="325"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition/>
+            <RowDefinition Height="8*"/>
         </Grid.RowDefinitions>
-        <Rectangle Fill="#FFF4F4F5" StrokeThickness="0" Height="47" Grid.Row="2" Stroke="Black" VerticalAlignment="Top" HorizontalAlignment="Left" Width="792"/>
         <Button Name ="ButtonBack" Content="Назад" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Height="25" Click="ButtonBack_Click"/>
-        <Frame x:Name="MainFrame" HorizontalAlignment="Left" Height="325" Grid.Row="1" VerticalAlignment="Top" Width="792" Source="Pages/AuthPage.xaml" Navigated="MainFrame_OnNavigated"/>
+        <Frame x:Name="MainFrame" Grid.Row="1" Source="Pages/AuthPage.xaml" Navigated="MainFrame_OnNavigated" NavigationUIVisibility="Hidden"/>
         <Button Content="Калькулятор" HorizontalAlignment="Left" Margin="672,10,0,0" VerticalAlignment="Top" Width="110" Height="25" Click="Button_OnCalc"/>
         <Button Click="Export" Content="Экспорт" HorizontalAlignment="Left" Margin="555,10,0,0" VerticalAlignment="Top" Width="75" Height="25"/>
         <Button Click="Import" Content="Импорт" HorizontalAlignment="Left" Margin="475,10,0,0" VerticalAlignment="Top" Width="75" Height="25"/>

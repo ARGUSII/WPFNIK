@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:WPFNIK.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Parts">
+      Title="Parts" IsVisibleChanged="PCPage_IsVisibleChanged">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -14,7 +14,7 @@
             <RowDefinition Height="50*"/>
             <RowDefinition Height="10*"/>
         </Grid.RowDefinitions>
-        <DataGrid Height="390" VerticalAlignment="Top" HorizontalAlignment="Left" Width="800" Grid.Row="0" Name="DataGridPC" AutoGenerateColumns="False" IsReadOnly="True">
+        <DataGrid Height="390" VerticalAlignment="Top" HorizontalAlignment="Left" Width="800" Grid.Row="0" x:Name="DataGridPC" AutoGenerateColumns="False" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Процессор" Binding="{Binding Processor}" Width="90"/>
                 <DataGridTextColumn Header="Видеокарта" Binding="{Binding VideoCard}" Width="90"/>

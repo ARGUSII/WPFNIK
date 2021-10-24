@@ -30,13 +30,13 @@
         <TextBlock Text="SSD" Grid.Row="4" Grid.Column="0" Margin="10,0,0,0"/>
         <TextBlock Text="HDD" Grid.Row="5" Grid.Column="0" Margin="10,0,0,0"/>
         <TextBlock Text="Блок питания" Grid.Row="6" Grid.Column="0" Margin="10,0,0,0"/>
-        <ComboBox Name="Process" SelectedItem="{Binding Processor}"  DisplayMemberPath="Processor" Grid.Row="0" Grid.Column="1"/>
-        <ComboBox Name="Video" SelectedItem="{Binding VideoCard}" DisplayMemberPath="VideoCard" Grid.Row="1" Grid.Column="1"/>
-        <ComboBox Name="Mather" SelectedItem="{Binding MotherBoard}" DisplayMemberPath="MotherBoard" Grid.Row="2" Grid.Column="1"/>
-        <ComboBox Name="Oper" SelectedItem="{Binding RAM}" DisplayMemberPath="RAM" Grid.Row="3" Grid.Column="1"/>
-        <ComboBox Name="ssd" SelectedItem="{Binding SSD}" DisplayMemberPath="SSD" Grid.Row="4" Grid.Column="1"/>
-        <ComboBox Name="hdd" SelectedItem="{Binding HDD}" DisplayMemberPath="HDD" Grid.Row="5" Grid.Column="1"/>
-        <ComboBox Name="BP" SelectedItem="{Binding Power}" DisplayMemberPath="Power" Grid.Row="6" Grid.Column="1"/>
+        <TextBox Text="{Binding Processor}" Grid.Row="0" Grid.Column="1"/>  
+        <TextBox Text="{Binding VideoCard}" Grid.Row="1" Grid.Column="1"/>
+        <TextBox Text="{Binding MotherBoard}" Grid.Row="2" Grid.Column="1"/>
+        <TextBox Text="{Binding RAM}" Grid.Row="3" Grid.Column="1"/>
+        <TextBox Text="{Binding SSD}" Grid.Row="4" Grid.Column="1"/>
+        <TextBox Text="{Binding HDD}" Grid.Row="5" Grid.Column="1"/>
+        <TextBox Text="{Binding Power}" Grid.Row="6" Grid.Column="1"/>
         <Button Name="ButtonSave" Content="Сохранить" Grid.Row="7" Grid.ColumnSpan="2" Click="ButtonSave_OnClick"/>
     </Grid>
 </Page>

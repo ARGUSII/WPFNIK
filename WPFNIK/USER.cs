@@ -19,5 +19,6 @@ namespace WPFNIK
         public string Role { get; set; }
         public string FIO { get; set; }
         public int ID { get; set; }
+        public byte[] Photo { get; set; }
     }
 }

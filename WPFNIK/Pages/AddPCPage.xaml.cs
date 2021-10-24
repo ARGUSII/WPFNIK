@@ -22,50 +22,50 @@ namespace WPFNIK.Pages
     {
         private PC _currentPC = new PC();
 
-        public AddPCPage()
+        public AddPCPage(PC selectedPC)
         {
             InitializeComponent();
+
+            if (selectedPC != null)
+                _currentPC = selectedPC;
+
             DataContext = _currentPC;
-            Process.ItemsSource = PCpartsEntities.GetContext().PC.ToList();
-            Video.ItemsSource = PCpartsEntities.GetContext().PC.ToList();
-            Mather.ItemsSource = PCpartsEntities.GetContext().PC.ToList();
-            Oper.ItemsSource = PCpartsEntities.GetContext().PC.ToList();
-            ssd.ItemsSource = PCpartsEntities.GetContext().PC.ToList();
-            hdd.ItemsSource = PCpartsEntities.GetContext().PC.ToList();
-            BP.ItemsSource = PCpartsEntities.GetContext().PC.ToList();
         }
 
         private void ButtonSave_OnClick(object sender, RoutedEventArgs e)
         {
             StringBuilder errors = new StringBuilder();
-            if (_currentPC.Processor == null)
-                errors.AppendLine("Выберите процессор!");
-            if (_currentPC.VideoCard == null)
-                errors.AppendLine("Выберите видеокарту!");
-            if (_currentPC.MotherBoard == null)
-                errors.AppendLine("Выберите материнскую плату!");
-            if (_currentPC.RAM == null)
-                errors.AppendLine("Выберите оперативную память!");
-            if (_currentPC.SSD == null)
-                errors.AppendLine("Выберите SSD!");
-            if (_currentPC.HDD == null)
-                errors.AppendLine("Выберите жёсткий диск!");
-            if (_currentPC.Power == null)
-                errors.AppendLine("Выберите блок питания!");
-            //Проверяем переменную errors на наличие ошибок
+
+            if (string.IsNullOrWhiteSpace(_currentPC.Processor))
+                errors.AppendLine("Укажите процессор!");
+            if (string.IsNullOrWhiteSpace(_currentPC.VideoCard))
+                errors.AppendLine("Укажите видеокарту!");
+            if (string.IsNullOrWhiteSpace(_currentPC.MotherBoard))
+                errors.AppendLine("Укажите материнскую плату!");
+            if (string.IsNullOrWhiteSpace(_currentPC.RAM))
+                errors.AppendLine("Укажите оперативную память!");
+            if (string.IsNullOrWhiteSpace(_currentPC.SSD))
+                errors.AppendLine("Укажите SSD!");
+            if (string.IsNullOrWhiteSpace(_currentPC.HDD))
+                errors.AppendLine("Укажите жёсткий диск!");
+            if (string.IsNullOrWhiteSpace(_currentPC.Power))
+                errors.AppendLine("Укажите блок питания!");
+
             if (errors.Length > 0)
             {
                 MessageBox.Show(errors.ToString());
                 return;
             }
-            //Добавляем в объект PC новую запись
+
             if (_currentPC.PCID == 0)
+            {
                 PCpartsEntities.GetContext().PC.Add(_currentPC);
-            //Делаем попытку записи данных в БД о новом компьютере
+            }
+            
             try
             {
                 PCpartsEntities.GetContext().SaveChanges();
-                MessageBox.Show("Данные успешно сохранены!");
+                MessageBox.Show("Информация сохранена");
             }
             catch (Exception ex)
             {

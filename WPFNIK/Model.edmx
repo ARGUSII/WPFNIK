@@ -37,6 +37,7 @@
           <Property Name="Role" Type="nvarchar" MaxLength="20" />
           <Property Name="FIO" Type="nvarchar" MaxLength="50" />
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Photo" Type="image" />
         </EntityType>
         <EntityContainer Name="Хранилище PCpartsModelContainer">
           <EntitySet Name="PC" EntityType="Self.PC" Schema="dbo" store:Type="Tables" />
@@ -66,6 +67,7 @@
           <Property Name="Role" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="FIO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="PC">
           <Key>
@@ -105,6 +107,7 @@
           <EntitySetMapping Name="USER">
             <EntityTypeMapping TypeName="PCpartsModel.USER">
               <MappingFragment StoreEntitySet="USER">
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
                 <ScalarProperty Name="Login" ColumnName="Login" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="Role" ColumnName="Role" />
